@@ -1,0 +1,81 @@
+{
+  "name": "@hankliu/rc-mirror-editor",
+  "version": "0.0.1",
+  "private": false,
+  "description": "React easy to use mirror-editor component",
+  "keywords": [
+    "react",
+    "react-component",
+    "react-mirror-editor",
+    "mirror-editor"
+  ],
+  "main": "./lib/index",
+  "module": "./es/index",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "assets/*.css",
+    "es",
+    "lib"
+  ],
+  "homepage": "https://github.com/hankliu62/rc-mirror-editor",
+  "repository": {
+    "type": "git",
+    "url": "git+https://git@github.com/hankliu62/rc-mirror-editor.git"
+  },
+  "bugs": {
+    "url": "http://github.com/hankliu62/rc-mirror-editor/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "dumi dev",
+    "docs:build": "dumi build",
+    "docs:deploy": "gh-pages -d docs-dist",
+    "compile": "father build",
+    "prepublishOnlyNot": "npm run compile && np patch --yolo --no-publish --any-branch",
+    "lint": "eslint src/ --ext .ts,.tsx,.jsx,.js,.md",
+    "prettier": "prettier --write \"./(src|tests)/**/*.{ts,tsx,js,jsx,json,md}\"",
+    "test": "rc-test -u",
+    "coverage": "rc-test -u --coverage",
+    "now-build": "npm run docs:build"
+  },
+  "peerDependencies": {
+    "react": ">=18.2.0",
+    "react-dom": ">=18.2.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.24.4",
+    "@codemirror/commands": "^6.3.3",
+    "@codemirror/state": "^6.4.1",
+    "@codemirror/theme-one-dark": "^6.1.2",
+    "@codemirror/view": "^6.26.3",
+    "@hankliu/hankliu-ui": "^0.0.1",
+    "@uiw/codemirror-extensions-basic-setup": "^4.21.25",
+    "@uiw/codemirror-extensions-langs": "^4.21.25",
+    "@uiw/codemirror-themes-all": "^4.21.25",
+    "classnames": "^2.5.1",
+    "codemirror": "^6.0.1",
+    "react-color": "2.19.3"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^15.0.2",
+    "@types/classnames": "^2.3.0",
+    "@types/jest": "^29.5.12",
+    "@types/react": "^18.2.78",
+    "@types/react-dom": "^18.2.25",
+    "@umijs/fabric": "^4.0.1",
+    "babel-plugin-import": "^1.13.8",
+    "cross-env": "^7.0.3",
+    "dumi": "^2.2.17",
+    "eslint": "^7.1.0",
+    "father": "^4.4.0",
+    "glob": "^10.3.12",
+    "less": "^4.2.0",
+    "np": "^10.0.3",
+    "rc-test": "^7.0.15",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-test-renderer": "^18.2.0",
+    "typescript": "^5.4.5"
+  }
+}
