@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_hankliu_rc_mirror_editor=self.webpackChunk_hankliu_rc_mirror_editor||[]).push([[9],{65149:function(f,r,e){e.r(r),e.d(r,{default:function(){return u}});var n=e(27544),o=e(67294),t=function(){var d=(0,n.UO)(),m=d.id,i=(0,n.WF)(),s=i.demos,c=s[m]||{},a=c.component;return a&&(0,o.createElement)(a)},u=t}}]);
