@@ -106,6 +106,13 @@ jobs:
       - name: Coverage代码 👿
         run: npm test -- --coverage && bash <(curl -s https://codecov.io/bash)
 
+      # 上传Coverage报告
+      - name: 上传Coverage报告 🚁
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: hankliu62/rc-mirror-editor
+
     needs: setup
 
   compile:
@@ -144,7 +151,7 @@ jobs:
       - name: 发布 🚀
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish --access public
+        run: npm publish --access public --tag beta
 
     needs: [lint, coverage]
 

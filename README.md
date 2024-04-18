@@ -1,5 +1,26 @@
 # @hankliu/rc-mirror-editor
 
+[![NPM version][npm-image]][npm-url]
+[![npm download][download-image]][download-url]
+[![build status][github-actions-image]][github-actions-url]
+[![Codecov][codecov-image]][codecov-url]
+[![bundle size][bundlephobia-image]][bundlephobia-url]
+[![dumi][dumi-image]][dumi-url]
+
+[npm-image]: http://img.shields.io/npm/v/rc-mirror-editor.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/@hankliu/rc-mirror-editor
+[travis-image]: https://img.shields.io/travis/hankliu62/rc-mirror-editor/master?style=flat-square
+[github-actions-image]: https://github.com/hankliu62/rc-mirror-editor/workflows/Publish%20Footer%20Components%20Into%20NPM/badge.svg
+[github-actions-url]: https://github.com/hankliu62/rc-mirror-editor/actions
+[codecov-image]: https://img.shields.io/codecov/c/github/hankliu62/rc-mirror-editor/master.svg?style=flat-square
+[codecov-url]: https://app.codecov.io/gh/hankliu62/rc-mirror-editor
+[download-image]: https://img.shields.io/npm/dm/@hankliu/rc-mirror-editor.svg?style=flat-square
+[download-url]: https://npmjs.org/package/@hankliu/rc-mirror-editor
+[bundlephobia-url]: https://bundlephobia.com/package/@hankliu/rc-mirror-editor
+[bundlephobia-image]: https://badgen.net/bundlephobia/minzip/@hankliu/rc-mirror-editor
+[dumi-url]: https://github.com/umijs/dumi
+[dumi-image]: https://img.shields.io/badge/docs%20by-dumi-blue?style=flat-square
+
 `Mirror Editor` 编辑器是功能齐全的代码编辑器，支持多种常规语言的IDE，允许配置支持智能提示。
 
 ## 特征

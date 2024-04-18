@@ -1,6 +1,6 @@
 {
   "name": "@hankliu/rc-mirror-editor",
-  "version": "0.0.1",
+  "version": "0.0.2-beta.0",
   "private": false,
   "description": "React easy to use mirror-editor component",
   "keywords": [
@@ -33,7 +33,7 @@
     "compile": "father build",
     "prepublishOnlyNot": "npm run compile && np patch --yolo --no-publish --any-branch",
     "lint": "eslint src/ --ext .ts,.tsx,.jsx,.js,.md",
-    "prettier": "prettier --write \"./(src|tests)/**/*.{ts,tsx,js,jsx,json,md}\"",
+    "prettier": "prettier --write \"./(src|test|docs)/**/*.{ts,tsx,js,jsx,json,md}\"",
     "test": "rc-test -u",
     "coverage": "rc-test -u --coverage",
     "now-build": "npm run docs:build"
@@ -48,15 +48,14 @@
     "@codemirror/state": "^6.4.1",
     "@codemirror/theme-one-dark": "^6.1.2",
     "@codemirror/view": "^6.26.3",
-    "@hankliu/hankliu-ui": "^0.0.1",
     "@uiw/codemirror-extensions-basic-setup": "^4.21.25",
     "@uiw/codemirror-extensions-langs": "^4.21.25",
     "@uiw/codemirror-themes-all": "^4.21.25",
     "classnames": "^2.5.1",
-    "codemirror": "^6.0.1",
-    "react-color": "2.19.3"
+    "codemirror": "^6.0.1"
   },
   "devDependencies": {
+    "@hankliu/hankliu-ui": "^0.0.1",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^15.0.2",
     "@types/classnames": "^2.3.0",
@@ -74,6 +73,7 @@
     "np": "^10.0.3",
     "rc-test": "^7.0.15",
     "react": "^18.2.0",
+    "react-color": "^2.19.3",
     "react-dom": "^18.2.0",
     "react-test-renderer": "^18.2.0",
     "typescript": "^5.4.5"

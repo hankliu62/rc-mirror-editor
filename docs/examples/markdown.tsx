@@ -1,7 +1,6 @@
 import MirrorEditor from '@hankliu/rc-mirror-editor';
 import * as React from 'react';
 
-
 const LanguageDemoMarkdown = `# Turndown Demo
 
 This demonstrates [turndown](https://github.com/mixmark-io/turndown) – an HTML to Markdown converter in JavaScript.
@@ -31,7 +30,7 @@ It aims to be [CommonMark](http://commonmark.org/) compliant, and includes optio
 `;
 
 export default function Base() {
-  const [content, setContent] = React.useState<string>(LanguageDemoMarkdown)
+  const [content, setContent] = React.useState<string>(LanguageDemoMarkdown);
 
   return (
     <div>
@@ -39,7 +38,7 @@ export default function Base() {
         height={400}
         value={content}
         language="markdown"
-        onChange={(val) => {
+        onChange={val => {
           setContent(val);
         }}
         theme="light"

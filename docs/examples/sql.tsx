@@ -1,7 +1,6 @@
 import MirrorEditor from '@hankliu/rc-mirror-editor';
 import * as React from 'react';
 
-
 const LanguageDemo = `SELECT start_time, COUNT(DISTINCT lesson_uid) AS count FROM (SELECT FROM_UNIXTIME(s.start_time / 1000, '%Y-%m-%d') AS start_time, s.lesson_uid AS lesson_uid FROM \`audio_xx_tickets_summary\` s JOIN \`audio_xx_tickets_detail\` d ON d.ticket_id = s.ticket_id WHERE s.start_time BETWEEN 1561939200000 AND 1562630399000 AND s.ticket_bu = 2 AND d.message_page LIKE '%杂音%') temp1 GROUP BY start_time ORDER BY start_time DESC
 
 SELECT start_time, COUNT(DISTINCT lesson_uid) AS count FROM (SELECT FROM_UNIXTIME(s.start_time / 1000, '%Y-%m-%d') AS start_time, s.lesson_uid AS lesson_uid FROM \`audio_xx_tickets_summary\` s JOIN \`audio_xx_tickets_detail\` d ON d.ticket_id = s.ticket_id WHERE s.start_time BETWEEN 1561939200000 AND 1562630399000 AND s.ticket_bu = 2 AND d.message_page LIKE '%回音%') temp1 GROUP BY start_time ORDER BY start_time DESC
@@ -40,7 +39,7 @@ ORDER BY i.stat_date DESC
 `;
 
 export default function Base() {
-  const [content, setContent] = React.useState<string>(LanguageDemo)
+  const [content, setContent] = React.useState<string>(LanguageDemo);
 
   return (
     <div>
@@ -48,7 +47,7 @@ export default function Base() {
         height={400}
         value={content}
         language="sql"
-        onChange={(val) => {
+        onChange={val => {
           setContent(val);
         }}
         theme="copilot"

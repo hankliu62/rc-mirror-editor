@@ -1,7 +1,6 @@
 import MirrorEditor from '@hankliu/rc-mirror-editor';
 import * as React from 'react';
 
-
 const LanguageDemo = `/* eslint-disable no-restricted-globals */
 /* eslint-disable no-case-declarations */
 /* eslint-disable no-use-before-define */
@@ -366,7 +365,7 @@ function getSeverityByVersion(monaco: any, monacoVersion: IMonacoVersion) {
 `;
 
 export default function Base() {
-  const [content, setContent] = React.useState<string>(LanguageDemo)
+  const [content, setContent] = React.useState<string>(LanguageDemo);
 
   return (
     <div>
@@ -374,7 +373,7 @@ export default function Base() {
         height={400}
         value={content}
         language="typescript"
-        onChange={(val) => {
+        onChange={val => {
           setContent(val);
         }}
         theme="eclipse"

@@ -2,7 +2,13 @@ import { defaultKeymap, indentWithTab } from '@codemirror/commands';
 import { Annotation, EditorState, type Extension } from '@codemirror/state';
 import { oneDark } from '@codemirror/theme-one-dark';
 import type { ViewUpdate } from '@codemirror/view';
-import { EditorView, highlightActiveLine, highlightWhitespace, keymap, placeholder } from '@codemirror/view';
+import {
+  EditorView,
+  highlightActiveLine,
+  highlightWhitespace,
+  keymap,
+  placeholder,
+} from '@codemirror/view';
 import { basicSetup, type BasicSetupOptions } from '@uiw/codemirror-extensions-basic-setup';
 import { langs, type LanguageName } from '@uiw/codemirror-extensions-langs';
 import * as alls from '@uiw/codemirror-themes-all';
@@ -137,12 +143,12 @@ export const getDefaultExtensions = (
 
   // 是否高亮空格
   if (highlightWhitespaceEnable) {
-    extensions.unshift(highlightWhitespace())
+    extensions.unshift(highlightWhitespace());
   }
 
   // 是否高亮当前所在的行
   if (highlightActiveLineEnable) {
-    extensions.unshift(highlightActiveLine())
+    extensions.unshift(highlightActiveLine());
   }
 
   // 主题

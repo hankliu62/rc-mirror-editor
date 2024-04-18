@@ -1,7 +1,6 @@
 import MirrorEditor from '@hankliu/rc-mirror-editor';
 import * as React from 'react';
 
-
 const LanguageDemo = `# encoding:utf-8
 import requests
 import base64
@@ -94,7 +93,7 @@ if __name__ == "__main__":
 `;
 
 export default function Base() {
-  const [content, setContent] = React.useState<string>(LanguageDemo)
+  const [content, setContent] = React.useState<string>(LanguageDemo);
 
   return (
     <div>
@@ -102,7 +101,7 @@ export default function Base() {
         height={400}
         value={content}
         language="python"
-        onChange={(val) => {
+        onChange={val => {
           setContent(val);
         }}
         theme="abyss"

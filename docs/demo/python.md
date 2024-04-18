@@ -1,7 +1,7 @@
 ---
 title: python
 nav:
-  title: Demo
+  title: 案例
   path: /demo
 ---
 

@@ -1,7 +1,6 @@
 import MirrorEditor from '@hankliu/rc-mirror-editor';
 import * as React from 'react';
 
-
 const LanguageDemo = `// variables
 @primary-color: #007bff;
 @secondary-color: #6c757d;
@@ -58,7 +57,7 @@ body {
 }`;
 
 export default function Base() {
-  const [content, setContent] = React.useState<string>(LanguageDemo)
+  const [content, setContent] = React.useState<string>(LanguageDemo);
 
   return (
     <div>
@@ -66,7 +65,7 @@ export default function Base() {
         height={400}
         value={content}
         language="less"
-        onChange={(val) => {
+        onChange={val => {
           setContent(val);
         }}
         theme="atomone"

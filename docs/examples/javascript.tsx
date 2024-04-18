@@ -1,7 +1,6 @@
 import MirrorEditor from '@hankliu/rc-mirror-editor';
 import * as React from 'react';
 
-
 const LanguageDem = `(function(w){
   var rest = {};
   rest.methods = ['get', 'post', 'put', 'del'];
@@ -75,15 +74,15 @@ const LanguageDem = `(function(w){
 `;
 
 export default function Base() {
-  const [content, setContent] = React.useState<string>(LanguageDem)
+  const [content, setContent] = React.useState<string>(LanguageDem);
 
   return (
-    <div style={{  backgroundColor: "#000", padding: "20px", borderRadius: "4px" }}>
+    <div style={{ backgroundColor: '#000', padding: '20px', borderRadius: '4px' }}>
       <MirrorEditor
         height={400}
         value={content}
         language="javascript"
-        onChange={(val) => {
+        onChange={val => {
           setContent(val);
         }}
         theme="vscodeDark"

@@ -1,7 +1,16 @@
-import type { LanguageName, TMirrorEditorTheme} from '@hankliu/rc-mirror-editor';
+import {
+  Button,
+  Checkbox,
+  Col,
+  ConfigProvider,
+  Divider,
+  Input,
+  Row,
+  Select,
+} from '@hankliu/hankliu-ui';
+import zhCN from '@hankliu/hankliu-ui/lib/locale/zh_CN';
+import type { LanguageName, TMirrorEditorTheme } from '@hankliu/rc-mirror-editor';
 import MirrorEditor, { alls, langs } from '@hankliu/rc-mirror-editor';
-import { Button, Checkbox, Col, ConfigProvider, Divider, Input, Row, Select } from '@hankliu/hankliu-ui';
-import zhCN from '@hankliu/hankliu-ui/lib/locale/zh_CN'
 import * as React from 'react';
 
 const LanguageDemo = {
@@ -700,29 +709,29 @@ const LanguageDemo = {
 
 const themeOptions = ['dark', 'light']
   .concat(Object.keys(alls))
-  .filter((item) => typeof alls[item as keyof typeof alls] !== 'function')
-  .filter((item) => !/^(defaultSettings)/.test(item as keyof typeof alls));
+  .filter(item => typeof alls[item as keyof typeof alls] !== 'function')
+  .filter(item => !/^(defaultSettings)/.test(item as keyof typeof alls));
 const heightOptions = ['auto', '200px', '300px', '500px'];
 
 export default function Base() {
   const [content, setContent] = React.useState<string>(LanguageDemo.html);
-  const [language, setLanguage] = React.useState<LanguageName>("html");
+  const [language, setLanguage] = React.useState<LanguageName>('html');
   const [theme, setTheme] = React.useState<TMirrorEditorTheme>('dark');
   const [height, setHeight] = React.useState<string>('500px');
   const [placeholder, setPlaceholder] = React.useState<string>('请输入内容');
   const [autofocus, setAutofocus] = React.useState<boolean>(false);
   const [editable, setEditable] = React.useState<boolean>(true);
 
-  const onDidChangeTheme = (callback: (theme: "dark" | "light") => void) => {
-    const root = document.querySelector("html");
+  const onDidChangeTheme = (callback: (theme: 'dark' | 'light') => void) => {
+    const root = document.querySelector('html');
 
-    const observer = new MutationObserver((mutationsList) => {
+    const observer = new MutationObserver(mutationsList => {
       for (const mutation of mutationsList) {
-        if (mutation.type === "attributes") {
-          if (root?.getAttribute("data-prefers-color") === "dark") {
-            callback("dark");
+        if (mutation.type === 'attributes') {
+          if (root?.getAttribute('data-prefers-color') === 'dark') {
+            callback('dark');
           } else {
-            callback("light");
+            callback('light');
           }
         }
       }
@@ -733,7 +742,7 @@ export default function Base() {
     return () => {
       observer.disconnect();
     };
-  }
+  };
 
   return (
     <ConfigProvider locale={zhCN}>
@@ -745,13 +754,13 @@ export default function Base() {
         value={content}
         language={language}
         theme={theme}
-        onChange={(val) => {
+        onChange={val => {
           setContent(val);
         }}
         getWebAppTheme={() => {
-          return document.querySelector("html")?.getAttribute("data-prefers-color") === "dark"
-            ? "dark"
-            : "light";
+          return document.querySelector('html')?.getAttribute('data-prefers-color') === 'dark'
+            ? 'dark'
+            : 'light';
         }}
         onWebAppThemeChange={onDidChangeTheme}
       />
@@ -765,18 +774,20 @@ export default function Base() {
             <Col flex="1">
               <Select
                 value={language}
-                style={{ width: "100%" }}
-                onChange={(val) => {
+                style={{ width: '100%' }}
+                onChange={val => {
                   setContent(LanguageDemo[val] || '');
                   setLanguage(val);
                 }}
                 showSearch
               >
-                {
-                  Object.keys(langs).sort().map((item) => (
-                    <Select.Option key={item} value={item}>{item}</Select.Option>
-                  ))
-                }
+                {Object.keys(langs)
+                  .sort()
+                  .map(item => (
+                    <Select.Option key={item} value={item}>
+                      {item}
+                    </Select.Option>
+                  ))}
               </Select>
             </Col>
           </Row>
@@ -787,17 +798,17 @@ export default function Base() {
             <Col flex="1">
               <Select
                 value={theme}
-                style={{ width: "100%" }}
-                onChange={(val) => {
+                style={{ width: '100%' }}
+                onChange={val => {
                   setTheme(val);
                 }}
                 showSearch
               >
-                {
-                  themeOptions.map((item) => (
-                    <Select.Option key={item} value={item}>{item}</Select.Option>
-                  ))
-                }
+                {themeOptions.map(item => (
+                  <Select.Option key={item} value={item}>
+                    {item}
+                  </Select.Option>
+                ))}
               </Select>
             </Col>
           </Row>
@@ -808,17 +819,17 @@ export default function Base() {
             <Col flex="1">
               <Select
                 value={height}
-                style={{ width: "100%" }}
-                onChange={(val) => {
+                style={{ width: '100%' }}
+                onChange={val => {
                   setHeight(val);
                 }}
                 showSearch
               >
-                {
-                  heightOptions.map((item) => (
-                    <Select.Option key={item} value={item}>{item}</Select.Option>
-                  ))
-                }
+                {heightOptions.map(item => (
+                  <Select.Option key={item} value={item}>
+                    {item}
+                  </Select.Option>
+                ))}
               </Select>
             </Col>
           </Row>
@@ -831,9 +842,11 @@ export default function Base() {
             <Col flex="80px">placeholder:</Col>
             <Col flex="1">
               <Input
-                style={{ width: "100" }}
+                style={{ width: '100' }}
                 value={placeholder}
-                onChange={(event) => { setPlaceholder(event.target.value) }}
+                onChange={event => {
+                  setPlaceholder(event.target.value);
+                }}
               />
             </Col>
           </Row>
@@ -844,7 +857,9 @@ export default function Base() {
             <Col flex="1">
               <Checkbox
                 checked={autofocus}
-                onChange={(event) => { setAutofocus(event.target.checked) }}
+                onChange={event => {
+                  setAutofocus(event.target.checked);
+                }}
               >
                 自动聚焦
               </Checkbox>
@@ -857,7 +872,9 @@ export default function Base() {
             <Col flex="1">
               <Checkbox
                 checked={editable}
-                onChange={(event) => { setEditable(event.target.checked) }}
+                onChange={event => {
+                  setEditable(event.target.checked);
+                }}
               >
                 可编辑
               </Checkbox>
@@ -868,7 +885,13 @@ export default function Base() {
 
       <Row gutter={16} style={{ marginTop: '16px' }}>
         <Col span={8}>
-          <Button onClick={() => { setContent('') }}>清空内容</Button>
+          <Button
+            onClick={() => {
+              setContent('');
+            }}
+          >
+            清空内容
+          </Button>
         </Col>
       </Row>
     </ConfigProvider>

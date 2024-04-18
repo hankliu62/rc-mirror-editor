@@ -1,7 +1,6 @@
 import MirrorEditor from '@hankliu/rc-mirror-editor';
 import * as React from 'react';
 
-
 const LanguageDemo = `name: CI
 
 on:
@@ -27,7 +26,7 @@ jobs:
         run: npm test`;
 
 export default function Base() {
-  const [content, setContent] = React.useState<string>(LanguageDemo)
+  const [content, setContent] = React.useState<string>(LanguageDemo);
 
   return (
     <div>
@@ -35,7 +34,7 @@ export default function Base() {
         height={400}
         value={content}
         language="yaml"
-        onChange={(val) => {
+        onChange={val => {
           setContent(val);
         }}
         theme="githubLight"
