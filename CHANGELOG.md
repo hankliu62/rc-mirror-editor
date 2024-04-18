@@ -23,6 +23,10 @@ timeline: true
 ```
 ---
 
+## 0.0.2
+
+- 📖 文档站点更新
+
 ## 0.0.1
 
 - 🆕 React Mirror Editor 组件，支持多种语言，支持多种主题

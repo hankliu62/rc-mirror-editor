@@ -1,7 +1,7 @@
 ---
 hero:
   title: @hankliu/rc-mirror-editor
-  description: HankLiu UI Mirror Editor.
+  description: React Mirror Editor Component.
 ---
 
 <embed src="../README.md"></embed>
