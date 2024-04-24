@@ -55,7 +55,7 @@
     "codemirror": "^6.0.1"
   },
   "devDependencies": {
-    "@hankliu/hankliu-ui": "^0.0.1",
+    "@hankliu/hankliu-ui": "^0.0.4",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^15.0.2",
     "@types/classnames": "^2.3.0",
